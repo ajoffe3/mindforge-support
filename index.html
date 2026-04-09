@@ -1,140 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindForge AI - Support</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-            color: #e0e0e0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .container {
-            max-width: 640px;
-            width: 100%;
-            padding: 60px 24px;
-            text-align: center;
-        }
-        .logo {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #6c63ff, #a855f7);
-            border-radius: 22px;
-            margin: 0 auto 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-        }
-        h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 8px;
-        }
-        .tagline {
-            font-size: 1.1rem;
-            color: #a0a0c0;
-            margin-bottom: 48px;
-        }
-        .section {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 32px 24px;
-            margin-bottom: 24px;
-            text-align: left;
-        }
-        .section h2 {
-            font-size: 1.2rem;
-            color: #fff;
-            margin-bottom: 16px;
-        }
-        .section p, .section li {
-            font-size: 0.95rem;
-            line-height: 1.7;
-            color: #b0b0cc;
-        }
-        .section ul {
-            list-style: none;
-            padding: 0;
-        }
-        .section ul li::before {
-            content: "→ ";
-            color: #6c63ff;
-        }
-        a {
-            color: #a855f7;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .contact-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #6c63ff, #a855f7);
-            color: #fff;
-            padding: 14px 32px;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            margin-top: 8px;
-        }
-        .contact-btn:hover {
-            opacity: 0.9;
-            text-decoration: none;
-        }
-        footer {
-            margin-top: 32px;
-            font-size: 0.85rem;
-            color: #606080;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#070b14">
+  <title>MindForge — Support</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #070b14;
+      --bg-card: rgba(14, 20, 36, 0.65);
+      --text: #ffffff;
+      --text-secondary: rgba(255, 255, 255, 0.6);
+      --text-muted: rgba(255, 255, 255, 0.4);
+      --border: rgba(255, 255, 255, 0.08);
+      --teal: #3dffd2;
+      --amber: #ffc55c;
+      --purple: #b49bff;
+      --rose: #ff8a9e;
+    }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Outfit", system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      min-height: 100dvh;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Cosmic background gradient */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse at 20% 10%, rgba(180, 155, 255, 0.08), transparent 50%),
+        radial-gradient(ellipse at 80% 30%, rgba(61, 255, 210, 0.06), transparent 50%),
+        radial-gradient(ellipse at 50% 90%, rgba(255, 138, 158, 0.05), transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .logo {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 20px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--teal), var(--purple));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(61, 255, 210, 0.15), 0 0 24px rgba(180, 155, 255, 0.15);
+    }
+
+    .logo svg {
+      width: 40px;
+      height: 40px;
+      color: #070b14;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #ffffff, var(--teal));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .tagline {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    .section {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 28px;
+      margin-bottom: 18px;
+    }
+
+    .section h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section h2::before {
+      content: "";
+      width: 4px;
+      height: 18px;
+      background: var(--teal);
+      border-radius: 2px;
+    }
+
+    .section p {
+      font-size: 0.97rem;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    .faq-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .faq-item:first-child { padding-top: 0; }
+
+    .faq-question {
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+      font-size: 0.97rem;
+    }
+
+    .faq-answer {
+      font-size: 0.93rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--teal);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(61, 255, 210, 0.3);
+      transition: border-color 0.2s;
+    }
+
+    a:hover {
+      border-bottom-color: var(--teal);
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      color: var(--text);
+      transition: all 0.2s;
+    }
+
+    .link-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(61, 255, 210, 0.3);
+      border-bottom-color: rgba(61, 255, 210, 0.3);
+    }
+
+    .contact-email {
+      display: inline-block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.95rem;
+      padding: 6px 12px;
+      background: rgba(61, 255, 210, 0.08);
+      border: 1px solid rgba(61, 255, 210, 0.2);
+      border-radius: 8px;
+      color: var(--teal);
+      border-bottom: 1px solid rgba(61, 255, 210, 0.2);
+    }
+
+    .contact-email:hover {
+      background: rgba(61, 255, 210, 0.12);
+      border-bottom-color: rgba(61, 255, 210, 0.2);
+    }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-family: "JetBrains Mono", monospace;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">🧠</div>
-        <h1>MindForge AI</h1>
-        <p class="tagline">Train your brain with AI-powered cognitive exercises</p>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/>
+          <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/>
+        </svg>
+      </div>
+      <h1>MindForge</h1>
+      <p class="tagline">Train your memory with science-backed cognitive games</p>
+    </header>
 
-        <div class="section">
-            <h2>About</h2>
-            <p>MindForge AI is your personal brain training companion. Challenge yourself with scientifically-inspired cognitive exercises designed to sharpen your memory, attention, processing speed, and problem-solving skills.</p>
-        </div>
-
-        <div class="section">
-            <h2>Features</h2>
-            <ul>
-                <li>Adaptive difficulty that grows with you</li>
-                <li>Track your cognitive performance over time</li>
-                <li>Daily brain training sessions</li>
-                <li>Multiple game categories targeting different cognitive skills</li>
-                <li>Clean, distraction-free interface</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Support</h2>
-            <p>Having trouble or have a question? We're here to help. Reach out and we'll get back to you as soon as possible.</p>
-            <br>
-            <center><a href="mailto:ajoffe3@gmail.com" class="contact-btn">Contact Support</a></center>
-        </div>
-
-        <div class="section">
-            <h2>Privacy Policy</h2>
-            <p>MindForge AI respects your privacy. We do not collect, store, or share any personal data. All game progress and scores are stored locally on your device. We do not use analytics, tracking, or advertising SDKs. No account creation is required to use the app.</p>
-        </div>
-
-        <footer>
-            <p>&copy; 2025 MindForge AI. All rights reserved.</p>
-        </footer>
+    <div class="section">
+      <h2>About MindForge</h2>
+      <p>MindForge is a brain training app built around four science-backed memory games: Dual N-Back (working memory), Pattern Memory (sequential memory), Memory Palace (associative memory), and Active Recall (long-term retention). Designed around peer-reviewed cognitive training research, it offers adaptive difficulty, daily challenges, streak tracking, and 30+ achievements.</p>
+      <p>The app is 100% offline. No accounts. No data collection. No ads. Everything stays on your device.</p>
     </div>
+
+    <div class="section">
+      <h2>Contact</h2>
+      <p>Questions, feedback, bug reports, or feature requests? Reach out anytime.</p>
+      <p style="margin-top: 16px;"><a href="mailto:mindforgeappai@gmail.com" class="contact-email">mindforgeappai@gmail.com</a></p>
+    </div>
+
+    <div class="section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">How do I reset my progress?</div>
+        <div class="faq-answer">Currently, the cleanest way is to delete and reinstall the app — since all data is stored locally, this clears everything. A built-in reset button is on our roadmap for a future update.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How is my data used?</div>
+        <div class="faq-answer">It isn't. MindForge collects zero personal data, has no analytics SDKs, no ad networks, and no backend servers. All your game progress and scores are stored locally on your device. See our <a href="https://ajoffe3.github.io/mindforge-privacy/">privacy policy</a> for full details.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How do I report a bug?</div>
+        <div class="faq-answer">Email <a href="mailto:mindforgeappai@gmail.com">mindforgeappai@gmail.com</a> with your device model, iOS version, and steps to reproduce the issue. Screenshots help.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Is there an Android version?</div>
+        <div class="faq-answer">Yes — MindForge is also live on Google Play under the same name. Same games, same offline-first design.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How do the games work?</div>
+        <div class="faq-answer">Each game targets a specific cognitive domain backed by published research. Visit our <a href="https://mindforgeappai.github.io/mindforge-science/">research page</a> for citations and an overview of the science behind each game.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Why do I need to memorize words / patterns / positions every session?</div>
+        <div class="faq-answer">Active retrieval — pulling information back from memory — is what builds the underlying cognitive strength. Recognition (seeing the same content twice) doesn't have the same effect. This is the testing effect (Roediger &amp; Karpicke, 2006), and it's why the games make you actively recall rather than passively review.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Links</h2>
+      <div class="links">
+        <a href="https://apps.apple.com/app/id6761082526" class="link-btn">App Store</a>
+        <a href="https://ajoffe3.github.io/mindforge-privacy/" class="link-btn">Privacy Policy</a>
+        <a href="https://mindforgeappai.github.io/mindforge-science/" class="link-btn">Research &amp; Science</a>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2026 MindForge AI &middot; Built with care for memory training
+    </footer>
+  </div>
 </body>
 </html>
